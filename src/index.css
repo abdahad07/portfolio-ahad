@@ -1,0 +1,47 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Instrument Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --color-surface: oklch(0.985 0.002 247);
+  --color-surface-elevated: oklch(1 0 0);
+  --color-ink: oklch(0.205 0.04 265);
+  --color-ink-muted: oklch(0.45 0.02 265);
+  --color-accent: oklch(0.585 0.233 277);
+  --color-accent-hover: oklch(0.52 0.24 277);
+  --color-border: oklch(0.9 0.01 265);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark body {
+  --color-surface: oklch(0.145 0.02 265);
+  --color-surface-elevated: oklch(0.185 0.025 265);
+  --color-ink: oklch(0.96 0.01 265);
+  --color-ink-muted: oklch(0.72 0.02 265);
+  --color-accent: oklch(0.68 0.19 277);
+  --color-accent-hover: oklch(0.74 0.17 277);
+  --color-border: oklch(0.28 0.02 265);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+}
+
+::selection {
+  background-color: color-mix(in oklch, var(--color-accent) 35%, transparent);
+}
